@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourtime | Modern Horology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Updated Lucide CDN for better stability -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fonts: Playfair Display for luxury headings, Inter for modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles & Animation */
+        :root {
+            --platinum-light: #f5f5f7;
+            --platinum-dark: #e2e2e5;
+            --text-dark: #1a1a1a;
+            --text-muted: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* The Blur Animation */
+        @keyframes blurIn {
+            0% {
+                filter: blur(15px);
+                opacity: 0;
+                transform: scale(1.05) translateY(10px);
+            }
+            100% {
+                filter: blur(0);
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-blur-1 {
+            animation: blurIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0; /* Start hidden */
+            animation-delay: 0.2s;
+        }
+        
+        .animate-blur-2 {
+            animation: blurIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            animation-delay: 0.6s;
+        }
+
+        .animate-blur-3 {
+            animation: blurIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            animation-delay: 1.0s;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image overlay gradient for platinum feel */
+        .platinum-overlay {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(245,245,247,0.8) 100%);
+        }
+        
+        .brand-text {
+            transition: color 0.3s ease;
+        }
+        .brand-text:hover {
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gray-200 selection:text-black">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 translate-y-0 opacity-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 z-50">
+    <img 
+        src="hourtimelogo.png"
+        alt="Hourtime logo"
+        class="h-28 w-auto mix-blend-difference"
+    >
+    
+</a>
+
+            <div class="hidden md:flex space-x-12 text-sm font-medium tracking-wide mix-blend-difference text-white md:text-black">
+                <a href="#collection" class="hover:opacity-60 transition-opacity">Collection</a>
+                <a href="#sourcing" class="hover:opacity-60 transition-opacity">Sourcing</a>
+                <a href="#concierge" class="hover:opacity-60 transition-opacity">Concierge</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white md:text-black md:border-black/10 md:bg-black/5 rounded-full text-sm hover:bg-white hover:text-black transition-all duration-300">
+                Inquire
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image: Patek Nautilus / AP Royal Oak style - Integrated bracelet steel sports watch -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="Hourtimemainhero.png" 
+                alt="Hourtimemainhero" 
+                  class="w-full h-full object-cover saturate-125 contrast-105 opacity-90 blur-[5px]"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-white"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <p class="animate-blur-1 text-black md:text-black1-200 text-xs md:text-sm uppercase tracking-[0.3em] mb-6 font-medium">
+                Defined by Rarity
+            </p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-tight
+           backdrop-blur-[2px] px-6 py-3
+           [text-shadow:0_2px_16px_rgba(255,255,255,0.6)]">
+    Curating the<br/>
+    <span class="italic font-light">Unattainable</span>
+</h1>
+            <div class="animate-blur-3 flex flex-col items-center gap-6">
+                <p class="text-black text-lg font-light max-w-xl mx-auto leading-relaxed">
+
+                    We bridge the gap between desire and ownership for the world's most prestigious timepieces.
+                </p>
+                <div class="mt-8">
+                    <a href="#sourcing" class="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-white bg-white rounded-none shadow-md">
+                        <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </span>
+                        <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">Discover</span>
+                        <span class="relative invisible">Discover</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sourcing / Brands Section -->
+    <section id="sourcing" class="py-24 px-6 md:px-12 bg-white relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal order-2 lg:order-1">
+                    <h2 class="text-4xl md:text-5xl mb-10 leading-tight text-gray-900">
+                        Access to the<br />
+                        <span class="text-gray-400 italic">Extraordinary</span>
+                    </h2>
+                    <p class="text-gray-600 mb-12 leading-relaxed font-light text-lg">
+                        At Hourtime, we don't just sell watches; we secure assets. Our network penetrates the closed doors of the horological world, granting you access to pieces that never hit the display case.
+                    </p>
+                    
+                    <!-- Updated Elegant Brand List -->
+                    <div class="space-y-8">
+                        <div class="border-l-2 border-gray-200 pl-6">
+                            <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Focus</p>
+                            <div class="flex flex-wrap gap-x-8 gap-y-4 text-2xl md:text-3xl font-serif text-gray-300">
+                                <span class="brand-text cursor-default">F.P. Journe</span>
+                                <span class="brand-text cursor-default">Patek Philippe</span>
+                                <span class="brand-text cursor-default">Audemars Piguet</span>
+                                <span class="brand-text cursor-default">Richard Mille</span>
+                                <span class="brand-text cursor-default">Rolex</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-gray-500 italic pl-6 pt-2">
+                            And other significant independent manufactures & grand complications.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="reveal order-1 lg:order-2 relative h-[700px] bg-gray-100 overflow-hidden rounded-sm">
+                    <!-- Image: Complex Movement / High Horology (representing FP Journe Vagabondage complexity) -->
+                    <img 
+                        src="Patekwatch.jpg" 
+                        alt="Patekwatch" 
+                        class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-1000 contrast-125"
+
+                    >
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-white/90 to-transparent">
+                        <p class="font-serif italic text-xl mb-1 text-black">The Art of Horology</p>
+                        <p class="text-xs text-gray-600 uppercase tracking-wider">Rare Timepieces sourced globally</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Platinum Service (Buy/Sell) -->
+    <section id="concierge" class="py-24 px-6 md:px-12 bg-[#f8f8f8]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">Concierge</span>
+                <h2 class="text-3xl md:text-4xl mt-4 font-serif">Curate Your Portfolio</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Buying Card -->
+                <div class="reveal group relative bg-white p-12 hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="watch" class="w-24 h-24"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4">Acquisition</h3>
+                    <p class="text-gray-500 mb-8 font-light leading-relaxed">
+                        Looking for a specific Reference? Whether it's a Vagabondage, a vintage Daytona, or a Nautilus, our sourcing team utilizes a global network to locate your timepiece.
+                    </p>
+                    <ul class="mb-10 space-y-3 text-sm text-gray-600">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-300"></i> Authenticity Guarantee</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-300"></i> Inspection & Logistics</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-300"></i> Private Consultation</li>
+                    </ul>
+                    <a href="mailto:buying@hourtime.co" class="inline-block border-b border-black pb-1 text-sm uppercase tracking-wider hover:text-gray-600 transition-colors">
+                        Contact Buying Team
+                    </a>
+                    <div class="mt-4 text-xs text-gray-400 font-mono">buying@hourtime.co</div>
+                </div>
+
+                <!-- Selling Card -->
+                <div class="reveal group relative bg-[#1a1a1a] text-white p-12 hover:shadow-2xl transition-all duration-500">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="arrow-up-right" class="w-24 h-24 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif mb-4 text-white">Consignment & Trade</h3>
+                    <p class="text-gray-400 mb-8 font-light leading-relaxed">
+                        Ready to part with a piece of your collection? We offer competitive market valuations, immediate purchase options, or white-glove consignment services.
+                    </p>
+                    <ul class="mb-10 space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-600"></i> Market Valuation</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-600"></i> Secure Insured Shipping</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-gray-600"></i> Same-Day Payment</li>
+                    </ul>
+                    <a href="mailto:selling@hourtime.co" class="inline-block border-b border-white pb-1 text-sm uppercase tracking-wider hover:text-gray-300 transition-colors">
+                        Contact Selling Team
+                    </a>
+                    <div class="mt-4 text-xs text-gray-500 font-mono">selling@hourtime.co</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Break -->
+    <section class="relative h-[60vh] w-full overflow-hidden">
+        <!-- Image: Chronograph detail (Daytona style) -->
+        <img 
+            src="https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?q=80&w=3087&auto=format&fit=crop" 
+            alt="Chronograph Pusher Detail" 
+            class="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+        >
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-4xl md:text-6xl text-white font-serif italic text-center drop-shadow-xl px-4">
+                "Time is the only true luxury."
+            </h2>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="bg-white pt-24 pb-12 px-6 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <div class="mb-12">
+                <h2 class="text-5xl font-serif mb-6 text-gray-900">Start the Conversation</h2>
+                <p class="text-gray-500 font-light text-lg">
+                    Whether acquiring your grail watch or refining your collection, <br>our team is at your disposal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="p-6 rounded-lg hover:bg-gray-50 transition-colors">
+                    <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Acquisitions</p>
+                    <a href="mailto:buying@hourtime.co" class="text-lg font-medium hover:text-gray-600 transition-colors">buying@hourtime.co</a>
+                </div>
+                <div class="p-6 rounded-lg hover:bg-gray-50 transition-colors">
+                    <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">Consignments</p>
+                    <a href="mailto:selling@hourtime.co" class="text-lg font-medium hover:text-gray-600 transition-colors">selling@hourtime.co</a>
+                </div>
+                <div class="p-6 rounded-lg hover:bg-gray-50 transition-colors">
+                    <p class="text-xs uppercase tracking-widest text-gray-400 mb-2">General Inquiries</p>
+                    <a href="mailto:team@hourtime.co" class="text-lg font-medium hover:text-gray-600 transition-colors">team@hourtime.co</a>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-8 mb-12">
+                <!-- Social Placeholders -->
+                <a href="#" class="text-gray-400 hover:text-black transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-400 hover:text-black transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2018 Hourtime LLC All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        // Ensure Lucide is loaded before calling createIcons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.error("Lucide library failed to load or is not yet available.");
+            }
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+                // Ensure text is legible on white background
+                navbar.querySelectorAll('a').forEach(el => {
+                    if(!el.classList.contains('bg-white/10')) { // Don't change the button
+                         el.classList.remove('text-white');
+                         el.classList.add('text-black');
+                    }
+                });
+            } else {
+                navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+                // Revert to original (mostly white for dark bg, but responsive check needed)
+                if(window.innerWidth > 768) {
+                     navbar.querySelectorAll('a').forEach(el => {
+                        if(!el.classList.contains('bg-white/10')) {
+                             el.classList.add('text-white');
+                             el.classList.remove('text-black');
+                        }
+                    });
+                }
+            }
+        });
+
+        // Scroll Reveal Animation using Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
